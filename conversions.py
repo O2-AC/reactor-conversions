@@ -4,8 +4,8 @@ import cs50
 print("Calculating conversions for CSTR and PFR combinations.")
 tCSTR = cs50.get_int("Provide residence time for the CSTR: ")
 tPFR = cs50.get_int("Provide residence time for the PFR: ")
-k = cs50.get_int("Provide rate constant: ")
-print("Assuming an initial concentration of 1 mol/L")
+k = 0.00015 # cs50.get_int("Provide rate constant: ")
+print("Assuming an initial concentration of 0.010 mol/L")
 cA0 = 1
 # First order
 # CSTR -> PFR
@@ -37,13 +37,10 @@ cAi = (1)/((1/cA0) + tPFR * k)
 cA = (np.sqrt(1 + 4 * tCSTR * k * cAi) - 1)/(2 * tCSTR * k)
 conversion4 = ((cA0-cA)/cA0)*100
 
+# Printing results
 print("######\nFirst order reaction\n######")
-print("------\nCSTR -> PFR\n------")
-print("Conversion: {}".format(round(conversion1, 2)))
-print("------\nPFR -> CSTR\n------")
-print("Conversion: {}".format(round(conversion2, 2)))
+print("CSTR -> PFR: Conversion: {}".format(round(conversion1, 2)))
+print("PFR -> CSTR: Conversion: {}".format(round(conversion2, 2)))
 print("######\nSecond order reaction\n######")
-print("------\nCSTR -> PFR\n------")
-print("Conversion: {}".format(round(conversion3, 2)))
-print("-------\nPFR -> CSTR\n------")
-print("Conversion: {}".format(round(conversion4, 2)))
+print("CSTR -> PFR: Conversion: {}".format(round(conversion3, 2)))
+print("PFR -> CSTR: Conversion: {}".format(round(conversion4, 2)))
