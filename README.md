@@ -16,3 +16,16 @@ integrates to: ![1st order PFR int](https://www.zahlen-kern.de/editor/equations/
 
 #### CSTR
 ![1st order CSTR int](https://www.zahlen-kern.de/editor/equations/hvon.png)
+
+### Second order reaction kinetics
+#### PFR
+![2nd order PFR int](https://www.zahlen-kern.de/editor/equations/hwcv.png)
+
+#### CSTR
+![2nd order CSTR int](https://www.zahlen-kern.de/editor/equations/hwcw.png)
+
+## The WebApp
+The WebApp shall ask the user for inputs of start concentration, reaction order, reaction rate and residence times.
+Instead of asking for residence times there shall be the possibility to enter reactor volumes and flow rates.
+Steady state operations of ideal reactors  will be assumed for calculations.
+The WebApp should return the conversions of the different reactor combinations in a bar plot.

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+  <form class="form-control" action="/variables" method="post">
+    <div class="form-group">
+      <div class="form-check">
+        <label for="variableFormRate">Rate constant: </label>
+        <input class="form-control" type="text" name="rateConstant" id="variableFormRate">
+      </div>
+      <div class="form-check">
+        <label for="variableFormTauCSTR">residence time in CSTR: </label>
+        <input class="form-control" type="text" name="tauCSTR" id="variableFormTauCSTR">
+      </div>
+      <div class="form-check">
+        <label for="variableFormTauPFR">residence time in PFR: </label>
+        <input class="form-control" type="text" name="tauPFR" id="variableFormTauPFR">
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="reactionOrder" id="zeroOrderReaction" value="zeroOrder" disabled>
+        <label class="form-check-label" for="zeroOrderReaction">Zero order reaction</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="reactionOrder" id="firstOrderReaction" value="firstOrder">
+        <label class="form-check-label" for="firstOrderReaction">1st order reacion</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="reactionOrder" id="secondOrderReaction" value="secondOrder">
+        <label class="form-check-label" for="secondOrderReaction">2nd order reaction</label>
+      </div>
+      <div class="form-check">
+        <button type="submit" name="submitVariables" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
